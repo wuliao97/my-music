@@ -30,7 +30,7 @@ pub async fn about(ctx: &Context, msg: &ApplicationCommandInteraction) -> Comman
     let source = {
         let gh_url = env::var("CARGO_PKG_REPOSITORY").unwrap();
         let readme_path = env::var("CARGO_PKG_README").unwrap();
-        let readme_url = format!("{}/master/{}", gh_url, readme_path);
+        let readme_url = format!("{}/blob/master/{}", gh_url, readme_path);
         quote!(format!("{}, {}", url!("Github", gh_url), url!("Readme", readme_url)))
     };
 
