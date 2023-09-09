@@ -1,0 +1,41 @@
+[package]
+name = "discord-music-bot"
+version = "0.1.0"
+authors = ["Ennui"]
+edition = "2021"
+build = "src/build.rs"
+readme = "README.md"
+repository = "https://github.com/wuliao97/my-music"
+description = "I'm a Music Discord Bot"
+
+
+[profile.production]
+inherits = "release"
+debug = true
+
+
+[dev-dependencies]
+rusty-hook = "0.11.2"
+
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+reqwest = { version = "0.11" }
+dotenv = "0.15.0"
+logger = { git = "https://github.com/wuliao97/logger-rust" }
+pretty_env_logger = "0.5.0"
+strip-ansi-escapes = "0.1.0"
+serde = { version = "1.0.*", features = ["derive"] }
+serde_json = "1.0"
+lru-cache = "0.1"
+async-trait = "0.1"
+content_inspector = "0.2"
+const_format = "0.2"
+rspotify = "0.11.7"
+chrono = "0.4.19"
+
+
+[dependencies.serenity]
+version = "=0.11.6"
+default-features = false
+features = ["unstable_discord_api", "collector", "gateway", "builder", "standard_framework", "http", "model", "client", "framework", "utils", "rustls_backend", "cache"]
